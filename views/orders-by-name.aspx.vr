@@ -1,0 +1,103 @@
+﻿Using System
+Using System.Data
+Using System.Configuration
+Using System.Collections
+Using System.Web
+Using System.Web.Security
+Using System.Web.UI
+Using System.Web.UI.WebControls
+Using System.Web.UI.WebControls.WebParts
+Using System.Web.UI.HtmlControls
+
+BegClass views_orders_by_name Partial(*Yes) Access(*Public) Extends(System.Web.UI.Page)
+
+    DclDB DGDB DBName( "*Public/DG NET Local" ) 
+    
+    DclConst ROWS_TO_DISPLAY Value(12) 
+
+    BegSr Page_Load Access(*Private) Event(*This.Load)
+        DclSrParm sender Type(*Object)
+        DclSrParm e Type(System.EventArgs)
+
+        *This.Title = 'MGC | Customer by name'
+
+        // This for testing. Change the ActiveDBName in web.config to change the database in use. 
+        // DGDB.DBName = System.Configuration.ConfigurationManager.AppSettings['ibmi']
+
+         If (NOT Page.IsPostBack)
+            GetFirstPage()
+        EndIf
+    EndSr
+    
+    BegSr GetFirstPage
+        DclFld custList Type(asna.entities.customerList) New(DGDB, ROWS_TO_DISPLAY)
+        DclArray pageData Type(asna.entities.Cmastnewl2_Buffer) Rank(1) 
+
+        custList.Open()
+        pageData = custList.ReadPage()
+
+        Session['cmname'] = custList.LastCMName
+        session['cmcustno'] = custList.LastCMCustNo
+        
+		listviewCustomers.DataSource = pageData
+		listviewCustomers.DataBind()
+        custList.Close() 
+    EndSr
+
+	BegSr listviewCustomersRowAction Access(*Protected) 
+        DclSrParm sender Type(*Object)
+        DclSrParm e Type(ListViewCommandEventArgs)
+
+		DclFld CommandName Type(*String) 
+		DclFld RowNumber Type(*Integer4)
+
+        // Buttons in ListView aren't yet converted to ASP.NET controls.
+
+		CommandName = e.CommandName
+		RowNumber = Convert.ToInt32(e.CommandArgument)
+
+        // Do something here based on CommandName and RowNumber 
+	EndSr 
+
+
+    BegSr Page_Unload Access(*Private) Event(*This.Unload)
+        DclSrParm sender Type(*Object)
+        DclSrParm e Type(System.EventArgs)
+
+        Disconnect DGDB
+    EndSr
+
+	BegSr pageNavigationButtons_Click Access(*Private) Event(*This.show_next_page.Click)
+		DclSrParm sender Type(*Object)
+		DclSrParm e Type(System.EventArgs)
+
+        DclFld CommandName Type(*String)            
+    
+        If sender *is LinkButton OR sender *is button            
+            CommandName = (sender *As LinkButton).CommandName
+            Case Cond(CommandName = 'show_next_page') Sr(ShowNextPage) 
+
+            EndCs
+
+        EndIf 		
+	EndSr
+
+    BegSr ShowNextPage 
+        DclFld custList Type(asna.entities.customerList) New(DGDB, ROWS_TO_DISPLAY)
+        DclArray pageData Type(asna.entities.Cmastnewl2_Buffer) Rank(1) 
+
+        custList.Open()
+
+        custList.LastCMName = Session['cmname'].ToString()
+        custList.LastCMCustNo = Session['cmcustno'].ToString()
+        pageData = custList.ReadNextPage()
+
+        Session['cmname'] = custList.LastCMName
+        session['cmcustno'] = custList.LastCMCustNo
+        
+		listviewCustomers.DataSource = pageData
+		listviewCustomers.DataBind()
+        custList.Close() 
+    EndSr 
+
+EndClass

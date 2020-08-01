@@ -1,0 +1,42 @@
+.heading-row, .data-row {
+    display: grid;
+    grid-template-rows: 3em;
+    grid-template-columns: 40% 30% 20%;
+}
+
+.heading-row div {
+    align-self: center;
+    padding: .5em;
+}
+
+.data-row div {
+    align-self: center;
+    padding: .5em;
+}
+
+.even-row {
+    background: rgba(152, 251, 152, 0.1); 
+}
+
+.odd-row {
+    background-color: ivory;
+}
+
+.data-row a {
+    text-align: center;
+    color: white;
+    padding: .1em .2em .1em .2em;
+    border-radius: .25em;
+    width: 5em;
+    display: inline-block;
+}
+
+.data-row a.btn-1 {
+    color: #4a5568;
+    background-color: rgba(100, 149, 237, 0.6);
+} 
+
+.data-row a.btn-2 {
+    color: #4a5568;
+    background-color: rgba(0, 250, 154, 0.6);
+} 

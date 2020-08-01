@@ -1,0 +1,128 @@
+﻿Using System
+Using System.Collections.Generic
+Using System.Linq
+Using System.Data
+Using System.Configuration
+Using System.Web
+Using System.Web.Security
+Using System.Web.UI
+Using System.Web.UI.WebControls
+Using System.Web.UI.WebControls.WebParts
+Using System.Web.UI.HtmlControls
+Using System.XML.Serialization
+Using System.IO 
+Using System.Text  
+Using System.Security.Cryptography  
+
+DclNamespace asna.entities
+
+BegClass customerList Access(*Public)
+
+    DclDB DGDB DBName( "*Public/DG NET Local" ) 
+                
+    DclDiskFile Customer +
+            Type(*Input) + 
+            Org(*Indexed) + 
+            Prefix(Customer_) + 
+            File("examples/cmastnewl2") +
+            DB(DGDB) +
+            RnmFmt(FRead) +
+            ImpOpen(*No)  
+
+    DclProp LastCMName Like(Customer_CMName) Access(*Public) 
+    DclProp LastCMCustNo Like(Customer_CMCustNo) Access(*Public) 
+
+    DclKList PrimaryKey
+        DclKFld cmastnewl2_cmname 
+        DclKFld cmastnewl2_cmcustno 
+
+    DclFld RowsToDisplay Type(*Integer4) 
+
+    BegConstructor Access(*Public)
+        DclSrParm DGDB Type(ASNA.VisualRPG.Runtime.Database) 
+        DclSrParm RowsToDisplay Type(*Integer4) 
+
+        *This.DGDB = DGDB
+        *This.RowsToDisplay = RowsToDisplay 
+    EndConstructor 
+    
+    // Open - Connect to DB and open files.
+    BegSr Open Access(*Public)
+        If NOT DGDB.IsOpen
+            Connect DGDB
+        EndIf             
+        If NOT Customer.IsOpen
+            Open Customer
+        EndIf 
+    EndSr
+
+    // --------------------------------------
+    // Close - Close all files and disconnect
+    // --------------------------------------
+    BegSr Close Access(*Public)
+        Close *All
+    EndSr
+
+    BegFunc ReadPage Access(*Public) Type(Cmastnewl2_Buffer) Rank(1) 
+        DclFld TempList Type(List(*Of CmastnewL2_Buffer)) New()
+        DclFld Buffer Type(CmastnewL2_Buffer) 
+
+        Do FromVal(1) ToVal(RowsToDisplay) 
+        Read Customer 
+            If Customer.IsEof()            
+                Leave
+            EndIf
+
+            TempList.Add(PopulateBuffer())
+            LastCMName = Customer_CMName
+            LastCMCustNo = Customer_CMCustNo
+        EndDo 
+
+        LeaveSr TempList.ToArray()
+    EndFunc         
+
+    BegFunc ReadNextPage Access(*Public) Type(Cmastnewl2_Buffer) Rank(1) 
+        SetGT Customer Key(*This.LastCMName, *This.LastCMCustno)
+        LeaveSr ReadPage()
+    EndFunc 
+
+    // ------------------------------------------------------------
+    // PopulateRecordFormat - Populate record format fields from a 
+    //                        buffer instance.
+    // ------------------------------------------------------------
+    // Inputs: Buffer instance to use to populate the record format fields.
+    BegFunc PopulateBuffer Access(*Private) Type(CmastnewL2_Buffer)
+        DclFld Buffer Type(CmastNewL2_buffer) 
+
+        Buffer = *New Cmastnewl2_Buffer()
+
+        Buffer.cmcustno = customer_cmcustno
+        Buffer.cmname = customer_cmname.Trim()
+        Buffer.cmaddr1 = customer_cmaddr1.Trim()
+        Buffer.cmcity = customer_cmcity.Trim()
+        Buffer.cmstate = customer_cmstate.Trim()
+        Buffer.cmcntry = customer_cmcntry.Trim()
+        Buffer.cmpostcode = customer_cmpostcode.Trim()
+        Buffer.cmactive = customer_cmactive.Trim()
+        Buffer.cmfax = customer_cmfax
+        Buffer.cmphone = customer_cmphone.Trim()
+
+        LeaveSr Buffer
+    EndFunc 
+EndClass
+
+// ----------------------------------------
+// Buffer class that holds all record data. 
+// ----------------------------------------
+BegClass Cmastnewl2_Buffer Access(*Public)
+    DclProp cmcustno     Type(*Packed) Len(9,0) Access(*Public)
+    DclProp cmname       Type(*Char) Len(40) Access(*Public)
+    DclProp cmaddr1      Type(*Char) Len(35) Access(*Public)
+    DclProp cmcity       Type(*Char) Len(30) Access(*Public)
+    DclProp cmstate      Type(*Char) Len(2) Access(*Public)
+    DclProp cmcntry      Type(*Char) Len(2) Access(*Public)
+    DclProp cmpostcode   Type(*Char) Len(10) Access(*Public)
+    DclProp cmactive     Type(*Char) Len(1) Access(*Public)
+    DclProp cmfax        Type(*Packed) Len(10,0) Access(*Public)
+    DclProp cmphone      Type(*Char) Len(20) Access(*Public)
+EndClass
