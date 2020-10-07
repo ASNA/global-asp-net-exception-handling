@@ -8,21 +8,33 @@ Using System.Web.UI
 Using System.Web.UI.WebControls
 Using System.Web.UI.WebControls.WebParts
 Using System.Web.UI.HtmlControls
+Using System.Configuration
 
 BegClass views_orders_by_name Partial(*Yes) Access(*Public) Extends(System.Web.UI.Page)
 
-    DclDB DGDB DBName( "*Public/DG NET Local" ) 
+    DclDB DGDB 
+
+    DclFld DGDBManager Type(DataGateDB) New()
     
-    DclConst ROWS_TO_DISPLAY Value(12) 
+    DclConst ROWS_TO_DISPLAY Value(18) 
 
     BegSr Page_Load Access(*Private) Event(*This.Load)
         DclSrParm sender Type(*Object)
         DclSrParm e Type(System.EventArgs)
 
+        DclFld ActiveDBName Type(*String) 
+
+        ActiveDBName = ConfigurationManager.AppSettings['ActiveDBName']
+        DGDB = DGDBManager.GetNewConnection(ConfigurationManager.AppSettings[ActiveDBName])
+        //DGDB = DGDBManager.GetNewConnection('*Public/Glodean')
+
+
         *This.Title = 'MGC | Customer by name'
 
-        // This for testing. Change the ActiveDBName in web.config to change the database in use. 
-        // DGDB.DBName = System.Configuration.ConfigurationManager.AppSettings['ibmi']
+        DclFld allHtml Type(*String) 
+        If *This.Request['allhtml'] <> *Nothing
+            allHtml = *This.Request['allhtml'].ToString()
+        EndIf 
 
          If (NOT Page.IsPostBack)
             GetFirstPage()

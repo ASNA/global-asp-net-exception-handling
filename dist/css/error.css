@@ -1,0 +1,14 @@
+﻿body {
+	background-color: #ebeceb;
+	font-family: sans-serif;
+}
+
+.error-icon-container {
+	width: 6rem;
+}
+
+.error-detail-container {
+	font-size: 1.4em;
+	height: 48rem;
+	overflow: auto;
+}

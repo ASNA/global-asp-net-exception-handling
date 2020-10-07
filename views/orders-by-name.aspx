@@ -1,4 +1,4 @@
-﻿<%@ Page Language="AVR" MasterPageFile="~/MasterPage.master" AutoEventWireup="false"
+﻿<%@ Page Language="AVR" MasterPageFile="~/MasterPage.master" AutoEventWireup="false" ValidateRequest="false"
     CodeFile="orders-by-name.aspx.vr" Inherits="views_orders_by_name" Title="Untitled Page" %>
 
 <%@ Register Src="~/user-controls/orders-pages-nav.ascx" TagPrefix="uc1" TagName="orderspagesnav" %>
@@ -13,9 +13,9 @@
 </asp:Content>
 
 <asp:Content ID="Content3" ContentPlaceHolderID="bodyPlaceHolder" runat="Server">
-    <main class="bg-gray-200 p-4 overflow-y-scroll">
+    <main class="bg-gray-200 overflow-y-scroll">
 
-        <div class="mb-3">
+        <div id="page-data-controls" class="mb-3">
             <button class="bg-gray-400 hover:bg-gray-300 text-gray-900 font-bold py-2 px-4 rounded inline-flex items-center">
                 <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-double-left"
                     class="w-4 svg-inline--fa fa-chevron-double-left fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg"
@@ -47,6 +47,9 @@
                     <path fill="currentColor" d="M477.5 273L283.1 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.7-22.7c-9.4-9.4-9.4-24.5 0-33.9l154-154.7-154-154.7c-9.3-9.4-9.3-24.5 0-33.9l22.7-22.7c9.4-9.4 24.6-9.4 33.9 0L477.5 239c9.3 9.4 9.3 24.6 0 34zm-192-34L91.1 44.7c-9.4-9.4-24.6-9.4-33.9 0L34.5 67.4c-9.4 9.4-9.4 24.5 0 33.9l154 154.7-154 154.7c-9.3 9.4-9.3 24.5 0 33.9l22.7 22.7c9.4 9.4 24.6 9.4 33.9 0L285.5 273c9.3-9.4 9.3-24.6 0-34z">
                     </path></svg>
             </button>
+
+            <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+            <button id="submitform">click me</button>
         </div>
 
 
@@ -96,6 +99,8 @@
             </asp:ListView>
         </div>
     </main>
+    <input type="hidden" name="allhtml" id="allhtml" />
+    
 </asp:Content>
 
 <asp:Content ID="Content4" ContentPlaceHolderID="scriptPlaceHolder" runat="Server">

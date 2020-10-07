@@ -1,0 +1,433 @@
+﻿
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>
+        MGC | Customer by name
+    </title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../dist/css/tailwind.css" />
+</head>
+
+<body class="font-bodytext">
+    <form method="post" action="./orders-by-name.aspx" id="form1">
+        <div class="aspNetHidden">
+            <input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+            <input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+            <input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwULLTE5ODgxNjA0NTQPZBYCZg9kFgICAw9kFgICAw9kFgICAw8UKwACDxYEHgtfIURhdGFCb3VuZGceC18hSXRlbUNvdW50AgxkZBYCZg9kFhgCAQ9kFgZmDxUDCGV2ZW4tcm93EyJMaWwiIFRvbW15IFJvYmVydHMUQXN0b24sIFBBIDE5MDE0ICAgICBkAgEPDxYCHg9Db21tYW5kQXJndW1lbnQFATBkZAIDDw8WAh8CBQEwZGQCAg9kFgZmDxUDB29kZC1yb3cOQSBDb3JwICYgUiBJbmMVQXVidXJuLCBQQSAxNzkyMiAgICAgZAIBDw8WAh8CBQExZGQCAw8PFgIfAgUBMWRkAgMPZBYGZg8VAwhldmVuLXJvdxBBIEdyb3VwIFggQ28gSW5jFUJvc3RvbiwgTUEgNzI2NTMgICAgIGQCAQ8PFgIfAgUBMmRkAgMPDxYCHwIFATJkZAIED2QWBmYPFQMHb2RkLXJvdxtBIEhlYWx0aCBTeXN0ZW1zIEdsb2JhbCBJbmMWRGV0cm9pdCwgTUkgNDgyMjYgICAgIGQCAQ8PFgIfAgUBM2RkAgMPDxYCHwIFATNkZAIFD2QWBmYPFQMIZXZlbi1yb3ccQSBTdXJnaWNhbCBDYXN1YWx0eSBJbmMgRmlyZRpTb3V0aCBIYXZlbiwgTUkgNDkwOTAgICAgIGQCAQ8PFgIfAgUBNGRkAgMPDxYCHwIFATRkZAIGD2QWBmYPFQMHb2RkLXJvdxdBIFkgU2VydmljZSBDIEFzc29jaWF0ZRNZb3JrLCBXWSAxNzQwMyAgICAgZAIBDw8WAh8CBQE1ZGQCAw8PFgIfAgUBNWRkAgcPZBYGZg8VAwhldmVuLXJvdx1BYmJvdHQgJiBFZHdhcmRzIFByb2R1Y3RzIFN0chVGcmVzbm8sIENBIDkzNzc4ICAgICBkAgEPDxYCHwIFATZkZAIDDw8WAh8CBQE2ZGQCCA9kFgZmDxUDB29kZC1yb3ciQWJyYXNpdmUgV2VsbGNvbWUgSW5jIEluYyBUcnVja2luZxhNb25hY2FvcnQsIFBBIDE1MDYxICAgICBkAgEPDxYCHwIFATdkZAIDDw8WAh8CBQE3ZGQCCQ9kFgZmDxUDCGV2ZW4tcm93IUFjY2VsZXJhdGlvbiBQcm9kdWN0cyBJbmMgU3lzIDEwNxZTdCBQYXVsLCBNTiA1NTE0NCAgICAgZAIBDw8WAh8CBQE4ZGQCAw8PFgIfAgUBOGRkAgoPZBYGZg8VAwdvZGQtcm93G0FjY3VncmFwaCBPZiBDb21wYW55IEluYyBDbxZBbGFtZWRhLCBOTSA5NDUwMSAgICAgZAIBDw8WAh8CBQE5ZGQCAw8PFgIfAgUBOWRkAgsPZBYGZg8VAwhldmVuLXJvdyhBY21lIE1pc3MgU2F2aW5ncyBNaWQtYXRsYW50aWMgQXNzb2NpYXRlI1N0IEpvaG5zIE5ld2ZvdW5kbG5kLCBDTiBBMUMgNVY2ICAgZAIBDw8WAh8CBQIxMGRkAgMPDxYCHwIFAjEwZGQCDA9kFgZmDxUDB29kZC1yb3ciQWRhbXMgSW5mbyBTcXVpYmItbmogRWRwIFJlc291cmNlcxdGbG9yZW5jZSwgQUwgMzU2MzAgICAgIGQCAQ8PFgIfAgUCMTFkZAIDDw8WAh8CBQIxMWRkGAEFJ2N0bDAwJGJvZHlQbGFjZUhvbGRlciRsaXN0dmlld0N1c3RvbWVycw8UKwAOZGRkZGRkZDwrAAwAAgxkZGRmAv////8PZEUfh1peqd6gh5lpHGHdQog50K1BUjz1W1brYG8oDgli" />
+        </div>
+
+        <script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['form1'];
+if (!theForm) {
+    theForm = document.form1;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+        </script>
+
+
+        <div class="aspNetHidden">
+
+            <input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="04C7E48B" />
+            <input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEdABpN0+n1L+5lMSirXqwUId+dFDDHtZKLLeaNofDhEM+Earki/Y3C6V3RWvK8SwzvdUtJS5nhF+kwJDd5VEs+fCsXcVLcNXtQBqmzFlX+B9HkcZ7ChJ6QBs4TgQk6gQ4ibWsjBXjNFfrmeEbS6rCgDgu4Vspf4FL/FBYBmku/fERly94HmUwGYBeWFc5UNTroq+7SCSN/bnYcMxtMdktgjUIc6vmnbxpsYqQorfF+CAwbyMQqWnC3541boIH1gR99M690PGp7jd6G8vwTilaMJpo1/PGN26nlMcV32jDGXNitsY/hdnTC2I57BacSh+XDOyGfQT0HCCKZdJ4BWuJm8Ymm/+ZfsINBJERT9D3cJm+XSOJMNqTjEFHcnB1WMSMjsMrnWcpYagKE2ugoQwRDQSSCdrM3d6Pt4BvEODQRP6uEZ96TKfFRIFlOpwjcW3bO7QtrfVu6yF5oMzRwbbhvmiLadQUV9it0tfR1dVz1I6IdQo6OHo/rYnfX68plsacP8vaiAAMhcKz3Iiz5vSM1D11NIMQ4MbgPpzRYX4OqI1Xe6k+MoD7S09PBfE8fNBRkbWbmMEalbsH3/1oetvrEcxzJ" />
+        </div>
+        <section id="page">
+            <header class="bg-primary-900 text-gray-500">
+                <div id="top-options" class="flex justify-start pb-4 pl-3 pt-3 md:flex-1 md:justify-end md:pr-3">
+                    <a href="#"><span class="mr-3 hover:font-extrabold border-primary-900 border-b-4 border-solid hover:border-gray-500">Contacts</span></a>
+                    <a href="#"><span class="mr-3 hover:font-extrabold border-primary-900 border-b-4 border-solid hover:border-gray-500">Feedback</span></a>
+                    <a href="#"><span class="mr-3 hover:font-extrabold border-primary-900 border-b-4 border-solid hover:border-gray-500">About</span></a>
+                </div>
+                <div id="brand" class="pl-3">
+                    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                         viewBox="0 0 1170.3 113.2" style="enable-background:new 0 0 1170.3 113.2;" xml:space="preserve">
+                    <style type="text/css">
+                        .st0 {
+                            enable-background: new;
+                        }
+
+                        .st1 {
+                            fill: #a0aec0;
+                        }
+</style>
+                    <g class="st0">
+                    <path class="st1" d="M78.7,2v97.4H56.4l0-65.7l-8.9,65.7H31.7l-9.4-64.2l0,64.2H0V2h33c1,5.9,2,12.8,3,20.7l3.6,24.8L45.5,2H78.7z" />
+                    <path class="st1" d="M143.6,60.9h-31.7v17.3c0,3.6,0.3,5.9,0.8,7c0.5,1,1.5,1.6,3,1.6c1.9,0,3.1-0.7,3.7-2.1c0.6-1.4,0.9-4.1,0.9-8
+                   V66.1h23.2V72c0,4.9-0.3,8.7-0.9,11.4c-0.6,2.6-2.1,5.5-4.4,8.5c-2.3,3-5.2,5.3-8.7,6.8c-3.5,1.5-8,2.3-13.3,2.3
+                   c-5.2,0-9.7-0.7-13.7-2.2c-4-1.5-7-3.5-9.2-6.1c-2.2-2.6-3.7-5.4-4.6-8.5c-0.8-3.1-1.3-7.6-1.3-13.6V47.2c0-7,0.9-12.5,2.8-16.5
+                   c1.9-4,5-7.1,9.3-9.3c4.3-2.1,9.3-3.2,14.9-3.2c6.9,0,12.5,1.3,17,3.9c4.5,2.6,7.6,6,9.4,10.3c1.8,4.3,2.7,10.3,2.7,18V60.9z
+                    M119,47.9v-5.8c0-4.1-0.2-6.8-0.7-8c-0.4-1.2-1.4-1.8-2.7-1.8c-1.7,0-2.7,0.5-3.1,1.5c-0.4,1-0.6,3.8-0.6,8.3v5.8H119z" />
+                    <path class="st1" d="M207.1,19.6v61.5c0,8.3-0.2,13.7-0.6,16.1c-0.4,2.4-1.7,5-4.1,7.7c-2.3,2.7-5.6,4.8-9.8,6.2
+                   c-4.2,1.4-9.4,2.1-15.8,2.1c-7.8,0-14-1.3-18.8-3.9c-4.7-2.6-7.2-7.8-7.3-15.5h23.7c0,3.5,1.3,5.3,3.9,5.3c1.9,0,3.1-0.5,3.7-1.6
+                   s0.9-3.4,0.9-6.8v-6c-2.1,1.9-4.3,3.3-6.6,4.3c-2.3,1-4.8,1.4-7.3,1.4c-4.4,0-8-0.9-10.9-2.6s-4.8-4.1-5.8-6.9
+                   c-1-2.9-1.6-6.9-1.6-12.2v-29c0-7.6,1.4-13,4.1-16.4c2.7-3.3,6.9-5,12.5-5c3.1,0,5.9,0.6,8.4,1.9c2.5,1.2,4.8,3.1,6.8,5.6l1.8-6
+                   H207.1z M182.6,40.8c0-3.6-0.2-6-0.6-7c-0.4-1-1.4-1.5-2.8-1.5c-1.4,0-2.4,0.6-3,1.7c-0.6,1.1-0.9,3.4-0.9,6.8v26.8
+                   c0,3.6,0.2,5.9,0.7,6.9c0.4,1.1,1.4,1.6,2.8,1.6c1.6,0,2.7-0.6,3.1-1.9c0.5-1.3,0.7-4.2,0.7-8.7V40.8z" />
+                    <path class="st1" d="M237.7,50.5h-22.9v-5.4c0-6.2,0.7-10.9,2.1-14.3c1.4-3.3,4.3-6.3,8.6-8.9c4.3-2.6,9.9-3.8,16.8-3.8
+                   c8.3,0,14.5,1.5,18.7,4.4c4.2,2.9,6.7,6.5,7.6,10.7c0.8,4.2,1.3,12.9,1.3,26.1v40.1h-23.8v-7.1c-1.5,2.9-3.4,5-5.8,6.4
+                   c-2.4,1.4-5.2,2.1-8.4,2.1c-4.3,0-8.2-1.2-11.8-3.6c-3.6-2.4-5.4-7.6-5.4-15.7v-6.6c0-6,0.9-10,2.8-12.2c1.9-2.2,6.6-4.7,14.1-7.6
+                   c8-3.1,12.3-5.2,12.9-6.3c0.6-1.1,0.8-3.3,0.8-6.6c0-4.2-0.3-6.9-0.9-8.2c-0.6-1.3-1.7-1.9-3.1-1.9c-1.7,0-2.7,0.5-3.1,1.6
+                   c-0.4,1.1-0.6,3.8-0.6,8.3V50.5z M245.5,61.5c-3.9,2.8-6.2,5.2-6.8,7.2c-0.6,1.9-0.9,4.7-0.9,8.3c0,4.1,0.3,6.8,0.8,8
+                   c0.5,1.2,1.6,1.8,3.2,1.8c1.5,0,2.5-0.5,3-1.4c0.5-0.9,0.7-3.4,0.7-7.4V61.5z" />
+                    <path class="st1" d="M337.6,37.9h-25.5v-8.8c0-5.6-0.2-9.1-0.7-10.5s-1.6-2.1-3.5-2.1c-1.6,0-2.6,0.6-3.2,1.8
+                   c-0.6,1.2-0.8,4.3-0.8,9.3v46.7c0,4.4,0.3,7.2,0.8,8.6c0.6,1.4,1.7,2.1,3.4,2.1c1.9,0,3.1-0.8,3.8-2.3s1-4.6,1-9.1V62h-5.1V47.2
+                   h29.9v52.3h-16l-2.4-7c-1.7,3-3.9,5.3-6.6,6.8c-2.6,1.5-5.8,2.3-9.4,2.3c-4.3,0-8.3-1-12-3.1c-3.7-2.1-6.6-4.6-8.5-7.7
+                   c-1.9-3-3.2-6.2-3.6-9.6c-0.5-3.3-0.7-8.4-0.7-15.1V37.1c0-9.3,0.5-16.1,1.5-20.3c1-4.2,3.9-8.1,8.7-11.6c4.8-3.5,11-5.3,18.6-5.3
+                   c7.5,0,13.7,1.5,18.6,4.6c4.9,3,8.1,6.7,9.6,10.9c1.5,4.2,2.2,10.3,2.2,18.3V37.9z" />
+                    <path class="st1" d="M371.9,2v12.7h-25.2V2H371.9z M371.9,19.6v79.8h-25.2V19.6H371.9z" />
+                    <path class="st1" d="M402.5,50.5h-22.9v-5.4c0-6.2,0.7-10.9,2.1-14.3c1.4-3.3,4.3-6.3,8.6-8.9c4.3-2.6,9.9-3.8,16.8-3.8
+                   c8.3,0,14.5,1.5,18.7,4.4c4.2,2.9,6.7,6.5,7.6,10.7c0.8,4.2,1.3,12.9,1.3,26.1v40.1h-23.8v-7.1c-1.5,2.9-3.4,5-5.8,6.4
+                   c-2.4,1.4-5.2,2.1-8.4,2.1c-4.3,0-8.2-1.2-11.8-3.6c-3.6-2.4-5.4-7.6-5.4-15.7v-6.6c0-6,0.9-10,2.8-12.2c1.9-2.2,6.6-4.7,14.1-7.6
+                   c8-3.1,12.3-5.2,12.9-6.3c0.6-1.1,0.8-3.3,0.8-6.6c0-4.2-0.3-6.9-0.9-8.2c-0.6-1.3-1.7-1.9-3.1-1.9c-1.7,0-2.7,0.5-3.1,1.6
+                   c-0.4,1.1-0.6,3.8-0.6,8.3V50.5z M410.3,61.5c-3.9,2.8-6.2,5.2-6.8,7.2c-0.6,1.9-0.9,4.7-0.9,8.3c0,4.1,0.3,6.8,0.8,8
+                   c0.5,1.2,1.6,1.8,3.2,1.8c1.5,0,2.5-0.5,3-1.4c0.5-0.9,0.7-3.4,0.7-7.4V61.5z" />
+                    <path class="st1" d="M468,19.6l-0.4,7.4c1.8-2.9,3.9-5.1,6.5-6.6c2.6-1.5,5.5-2.2,8.9-2.2c4.2,0,7.6,1,10.3,2.9
+                   c2.7,2,4.4,4.4,5.1,7.4c0.8,3,1.2,8,1.2,14.9v55.9h-24.5V44.1c0-5.5-0.2-8.8-0.5-10s-1.4-1.8-3-1.8c-1.7,0-2.8,0.7-3.3,2.1
+                   c-0.4,1.4-0.7,5.1-0.7,11.1v54h-24.5V19.6H468z" />
+                    <path class="st1" d="M533.8,9v12.6h6.6v12.6h-6.6v42.7c0,5.3,0.3,8.2,0.8,8.8s2.8,0.9,6.8,0.9v12.9h-9.9c-5.6,0-9.5-0.2-11.9-0.7
+                   c-2.4-0.5-4.5-1.5-6.3-3.2c-1.8-1.7-2.9-3.6-3.4-5.7c-0.4-2.1-0.7-7.2-0.7-15.1V34.2H504V21.5h5.3V9H533.8z" />
+                    <path class="st1" d="M627.9,44.4h-25.5V27.5c0-4.9-0.3-8-0.8-9.2s-1.7-1.8-3.6-1.8c-2.1,0-3.4,0.7-4,2.2c-0.6,1.5-0.8,4.7-0.8,9.6
+                   v45.2c0,4.7,0.3,7.8,0.8,9.3c0.6,1.4,1.8,2.2,3.8,2.2c1.9,0,3.1-0.7,3.7-2.2c0.6-1.4,0.9-4.8,0.9-10.2V60.4h25.5v3.8
+                   c0,10.1-0.7,17.2-2.1,21.4c-1.4,4.2-4.6,7.9-9.5,11.1c-4.9,3.2-10.9,4.8-18.1,4.8c-7.5,0-13.6-1.3-18.5-4
+                   c-4.8-2.7-8.1-6.4-9.6-11.2c-1.6-4.8-2.4-11.9-2.4-21.4V36.4c0-7,0.2-12.3,0.7-15.8c0.5-3.5,1.9-6.9,4.3-10.1
+                   c2.4-3.2,5.7-5.8,10-7.7C587,0.9,591.9,0,597.4,0c7.5,0,13.7,1.4,18.6,4.3c4.9,2.9,8.1,6.5,9.6,10.8c1.5,4.3,2.3,11,2.3,20.1V44.4z
+                   " />
+                    <path class="st1" d="M691.7,47.6v19.5c0,7.2-0.4,12.4-1.1,15.8c-0.7,3.3-2.3,6.5-4.7,9.4c-2.4,2.9-5.4,5.1-9.2,6.4
+                   c-3.7,1.4-8,2.1-12.9,2.1c-5.4,0-10-0.6-13.7-1.8c-3.8-1.2-6.7-3-8.8-5.4s-3.6-5.3-4.5-8.7s-1.3-8.5-1.3-15.2V49.4
+                   c0-7.4,0.8-13.2,2.4-17.4c1.6-4.2,4.5-7.5,8.7-10c4.2-2.5,9.6-3.8,16.1-3.8c5.5,0,10.2,0.8,14.1,2.4s7,3.7,9.1,6.3s3.6,5.3,4.4,8.1
+                   S691.7,42,691.7,47.6z M667.2,41.6c0-4.1-0.2-6.7-0.7-7.7c-0.4-1.1-1.4-1.6-2.8-1.6c-1.5,0-2.4,0.5-2.9,1.6
+                   c-0.5,1.1-0.7,3.6-0.7,7.7v36c0,3.8,0.2,6.2,0.7,7.4s1.4,1.7,2.8,1.7c1.5,0,2.4-0.5,2.9-1.6c0.5-1,0.7-3.3,0.7-6.7V41.6z" />
+                    <path class="st1" d="M724.2,19.6l-1,10.5c3.6-7.5,8.7-11.5,15.4-11.9v28.1c-4.5,0-7.8,0.6-9.9,1.8c-2.1,1.2-3.4,2.9-3.9,5
+                   c-0.5,2.1-0.7,7.1-0.7,14.8v31.5h-24.5V19.6H724.2z" />
+                    <path class="st1" d="M769,19.6l-0.4,7.1c2.2-2.9,4.6-5,7.2-6.4c2.6-1.4,5.5-2.1,8.6-2.1c3.8,0,7.1,1,9.8,3c2.8,2,4.5,4.4,5.2,7
+                   c0.7,2.6,1,7.1,1,13.5v33.6c0,7.3-0.4,12.4-1.3,15.5c-0.9,3.1-2.6,5.5-5.3,7.3s-5.9,2.7-9.7,2.7c-3,0-5.8-0.7-8.4-2.1
+                   c-2.6-1.4-4.9-3.5-7.1-6.3v18.3h-24.5V19.6H769z M775.9,42.8c0-4.9-0.2-7.9-0.5-9s-1.4-1.6-3-1.6c-1.6,0-2.7,0.6-3.1,1.8
+                   s-0.7,4.1-0.7,8.7v33.1c0,4.8,0.2,7.8,0.7,9c0.5,1.2,1.5,1.8,3.1,1.8c1.6,0,2.6-0.6,2.9-1.7c0.4-1.1,0.6-3.8,0.6-8V42.8z" />
+                    <path class="st1" d="M863.8,47.6v19.5c0,7.2-0.4,12.4-1.1,15.8c-0.7,3.3-2.3,6.5-4.7,9.4c-2.4,2.9-5.4,5.1-9.2,6.4
+                   c-3.7,1.4-8,2.1-12.9,2.1c-5.4,0-10-0.6-13.7-1.8c-3.8-1.2-6.7-3-8.8-5.4s-3.6-5.3-4.5-8.7s-1.3-8.5-1.3-15.2V49.4
+                   c0-7.4,0.8-13.2,2.4-17.4c1.6-4.2,4.5-7.5,8.7-10c4.2-2.5,9.6-3.8,16.1-3.8c5.5,0,10.2,0.8,14.1,2.4s7,3.7,9.1,6.3s3.6,5.3,4.4,8.1
+                   S863.8,42,863.8,47.6z M839.3,41.6c0-4.1-0.2-6.7-0.7-7.7c-0.4-1.1-1.4-1.6-2.8-1.6c-1.5,0-2.4,0.5-2.9,1.6
+                   c-0.5,1.1-0.7,3.6-0.7,7.7v36c0,3.8,0.2,6.2,0.7,7.4s1.4,1.7,2.8,1.7c1.5,0,2.4-0.5,2.9-1.6c0.5-1,0.7-3.3,0.7-6.7V41.6z" />
+                    <path class="st1" d="M896.3,19.6l-1,10.5c3.6-7.5,8.7-11.5,15.4-11.9v28.1c-4.5,0-7.8,0.6-9.9,1.8c-2.1,1.2-3.4,2.9-3.9,5
+                   c-0.5,2.1-0.7,7.1-0.7,14.8v31.5h-24.5V19.6H896.3z" />
+                    <path class="st1" d="M938.1,50.5h-22.9v-5.4c0-6.2,0.7-10.9,2.1-14.3c1.4-3.3,4.3-6.3,8.6-8.9c4.3-2.6,9.9-3.8,16.8-3.8
+                   c8.3,0,14.5,1.5,18.7,4.4s6.7,6.5,7.6,10.7c0.8,4.2,1.3,12.9,1.3,26.1v40.1h-23.8v-7.1c-1.5,2.9-3.4,5-5.8,6.4s-5.2,2.1-8.4,2.1
+                   c-4.3,0-8.2-1.2-11.8-3.6c-3.6-2.4-5.4-7.6-5.4-15.7v-6.6c0-6,0.9-10,2.8-12.2c1.9-2.2,6.6-4.7,14.1-7.6c8-3.1,12.3-5.2,12.9-6.3
+                   c0.6-1.1,0.8-3.3,0.8-6.6c0-4.2-0.3-6.9-0.9-8.2c-0.6-1.3-1.7-1.9-3.1-1.9c-1.7,0-2.7,0.5-3.1,1.6c-0.4,1.1-0.6,3.8-0.6,8.3V50.5z
+                    M945.8,61.5c-3.9,2.8-6.2,5.2-6.8,7.2s-0.9,4.7-0.9,8.3c0,4.1,0.3,6.8,0.8,8c0.5,1.2,1.6,1.8,3.2,1.8c1.5,0,2.5-0.5,3-1.4
+                   c0.5-0.9,0.7-3.4,0.7-7.4V61.5z" />
+                    <path class="st1" d="M1004.5,9v12.6h6.6v12.6h-6.6v42.7c0,5.3,0.3,8.2,0.8,8.8s2.8,0.9,6.8,0.9v12.9h-9.9c-5.6,0-9.5-0.2-11.9-0.7
+                   c-2.4-0.5-4.5-1.5-6.3-3.2c-1.8-1.7-2.9-3.6-3.4-5.7c-0.4-2.1-0.7-7.2-0.7-15.1V34.2h-5.3V21.5h5.3V9H1004.5z" />
+                    <path class="st1" d="M1041.7,2v12.7h-25.2V2H1041.7z M1041.7,19.6v79.8h-25.2V19.6H1041.7z" />
+                    <path class="st1" d="M1105.8,47.6v19.5c0,7.2-0.4,12.4-1.1,15.8c-0.7,3.3-2.3,6.5-4.7,9.4c-2.4,2.9-5.4,5.1-9.2,6.4
+                   c-3.7,1.4-8,2.1-12.9,2.1c-5.4,0-10-0.6-13.7-1.8c-3.8-1.2-6.7-3-8.8-5.4s-3.6-5.3-4.5-8.7s-1.3-8.5-1.3-15.2V49.4
+                   c0-7.4,0.8-13.2,2.4-17.4c1.6-4.2,4.5-7.5,8.7-10c4.2-2.5,9.6-3.8,16.1-3.8c5.5,0,10.2,0.8,14.1,2.4s7,3.7,9.1,6.3s3.6,5.3,4.4,8.1
+                   S1105.8,42,1105.8,47.6z M1081.4,41.6c0-4.1-0.2-6.7-0.7-7.7c-0.4-1.1-1.4-1.6-2.8-1.6c-1.5,0-2.4,0.5-2.9,1.6
+                   c-0.5,1.1-0.7,3.6-0.7,7.7v36c0,3.8,0.2,6.2,0.7,7.4s1.4,1.7,2.8,1.7c1.5,0,2.4-0.5,2.9-1.6c0.5-1,0.7-3.3,0.7-6.7V41.6z" />
+                    <path class="st1" d="M1138.8,19.6l-0.4,7.4c1.8-2.9,3.9-5.1,6.5-6.6c2.6-1.5,5.5-2.2,8.9-2.2c4.2,0,7.6,1,10.3,2.9
+                   c2.7,2,4.4,4.4,5.1,7.4c0.8,3,1.2,8,1.2,14.9v55.9h-24.5V44.1c0-5.5-0.2-8.8-0.5-10s-1.4-1.8-3-1.8c-1.7,0-2.8,0.7-3.3,2.1
+                   c-0.4,1.4-0.7,5.1-0.7,11.1v54h-24.5V19.6H1138.8z" />
+           </g>
+           </svg>
+
+                </div>
+                <div id="bottom-options" class="text-gray-500 flex flex-col md:flex-1 md:flex-row mdjustify-start pt-4 pb-3 pl-3">
+                    <a href="#"><span class="mr-3 hover:font-extrabold border-primary-900 border-b-4 border-solid md:hover:border-gray-500">Home</span></a>
+                    <a href="#"><span class="mr-3 hover:font-extrabold border-primary-900 border-b-4 border-solid md:hover:border-gray-500">Customers</span></a>
+                    <a href="#"><span class="mr-3 hover:font-extrabold border-primary-900 border-b-4 border-solid md:hover:border-gray-500">Products</span></a>
+                    <a href="#"><span class="mr-3 hover:font-extrabold border-primary-900 border-b-4 border-solid md:hover:border-gray-500">Distributors</span></a>
+                    <a href="#"><span class="mr-3 hover:font-extrabold border-primary-900 border-b-4 border-solid md:hover:border-gray-500">Services</span></a>
+                    <a href="#"><span class="mr-3 hover:font-extrabold border-primary-900 border-b-4 border-solid md:hover:border-gray-500">Warehouses</span></a>
+                </div>
+            </header>
+
+
+
+
+            <nav class="bg-gray-500">
+                <div id="sub-nav" class="flex flex-col items-start pt-4 pl-4 text-gray-700">
+                    <div class="pb-1 pr-4">
+                        <span class="text-xl text-gray-800 pb-2">Show customers by</span>
+                    </div>
+                    <a href="./orders-by-name.aspx" data-action="page-action" id="orders-by-name" class=""><span class="pl-3 text-lg">Name</span></a>
+                    <a href="./orders-by-address.aspx" data-action="page-action" id="orders-by-address" class=""><span class="pl-3 text-lg">Address</span></a>
+                    <a href="#" data-action="page-action" id="orders-by-sales" class=""><span class="pl-3 text-lg">Sales</span></a>
+                    <div class="pb-1 pr-4 pt-2">
+                        <span class="text-xl text-gray-800 pt-4 pb-2">Show orders by</span>
+                    </div>
+                    <a href="#" data-action="page-action" id="back-orders-by-name" class=""><span class="pl-3 text-lg">Name</span></a>
+                    <a href="#" data-action="page-action" id="back-orders-by-sales" class=""><span class="pl-3 text-lg">Sales</span></a>
+                </div>
+            </nav>
+
+
+
+
+            <main class="bg-gray-200 overflow-y-scroll">
+
+                <div id="page-data-controls" class="mb-3">
+                    <button class="bg-gray-400 hover:bg-gray-300 text-gray-900 font-bold py-2 px-4 rounded inline-flex items-center">
+                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-double-left"
+                             class="w-4 svg-inline--fa fa-chevron-double-left fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg"
+                             viewBox="0 0 512 512">
+                            <path fill="currentColor" d="M34.5 239L228.9 44.7c9.4-9.4 24.6-9.4 33.9 0l22.7 22.7c9.4 9.4 9.4 24.5 0 33.9L131.5 256l154 154.7c9.3 9.4 9.3 24.5 0 33.9l-22.7 22.7c-9.4 9.4-24.6 9.4-33.9 0L34.5 273c-9.3-9.4-9.3-24.6 0-34zm192 34l194.3 194.3c9.4 9.4 24.6 9.4 33.9 0l22.7-22.7c9.4-9.4 9.4-24.5 0-33.9L323.5 256l154-154.7c9.3-9.4 9.3-24.5 0-33.9l-22.7-22.7c-9.4-9.4-24.6-9.4-33.9 0L226.5 239c-9.3 9.4-9.3 24.6 0 34z">
+                            </path>
+                        </svg>
+                    </button>
+
+                    <button class="bg-gray-400 hover:bg-gray-300 text-gray-900 font-bold py-2 px-4 rounded inline-flex items-center">
+                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-left"
+                             class="w-4 svg-inline--fa fa-chevron-left fa-w-10" role="img" xmlns="http://www.w3.org/2000/svg"
+                             viewBox="0 0 512 512">
+                            <path fill="currentColor" d="M34.52 239.03L228.87 44.69c9.37-9.37 24.57-9.37 33.94 0l22.67 22.67c9.36 9.36 9.37 24.52.04 33.9L131.49 256l154.02 154.75c9.34 9.38 9.32 24.54-.04 33.9l-22.67 22.67c-9.37 9.37-24.57 9.37-33.94 0L34.52 272.97c-9.37-9.37-9.37-24.57 0-33.94z">
+                            </path>
+                        </svg>
+                    </button>
+
+                    <a id="bodyPlaceHolder_show_next_page" class="bg-gray-400 hover:bg-gray-300 text-gray-900 font-bold py-2 px-4 rounded inline-flex items-center" href="javascript:__doPostBack(&#39;ctl00$bodyPlaceHolder$show_next_page&#39;,&#39;&#39;)">
+                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-right"
+                             class="w-4 svg-inline--fa fa-chevron-right fa-w-10" role="img" xmlns="http://www.w3.org/2000/svg"
+                             viewBox="0 0 512 512">
+                            <path fill="currentColor" d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z">
+                            </path>
+                        </svg>
+                    </a>
+
+                    <button class="bg-gray-400 hover:bg-gray-300 text-gray-900 font-bold py-2 px-4 rounded inline-flex items-center">
+                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-double-right"
+                             class="w-4 svg-inline--fa fa-chevron-double-right fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg"
+                             viewBox="0 0 512 512">
+                            <path fill="currentColor" d="M477.5 273L283.1 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.7-22.7c-9.4-9.4-9.4-24.5 0-33.9l154-154.7-154-154.7c-9.3-9.4-9.3-24.5 0-33.9l22.7-22.7c9.4-9.4 24.6-9.4 33.9 0L477.5 239c9.3 9.4 9.3 24.6 0 34zm-192-34L91.1 44.7c-9.4-9.4-24.6-9.4-33.9 0L34.5 67.4c-9.4 9.4-9.4 24.5 0 33.9l154 154.7-154 154.7c-9.3 9.4-9.3 24.5 0 33.9l22.7 22.7c9.4 9.4 24.6 9.4 33.9 0L285.5 273c9.3-9.4 9.3-24.6 0-34z">
+                            </path>
+                        </svg>
+                    </button>
+                </div>
+
+
+                <div id="main-content" class="">
+
+
+
+                    <div id="main-content" class="mb-3">
+
+
+                        <div class="heading-row mb-4 bg-gray-300">
+                            <div class="col-sm heading">
+                                Name
+                            </div>
+                            <div class="col-md heading">
+                                City, State, Zip
+                            </div>
+                            <div class="col-sm heading">
+                                Actions
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <div class="data-row even-row">
+                        <div>
+                            "Lil" Tommy Roberts
+                        </div>
+                        <div>
+                            Aston, PA 19014
+                        </div>
+                        <div>
+                            <a id="bodyPlaceHolder_listviewCustomers_linkbuttonUpdate_0" class="btn-1" href="javascript:__doPostBack(&#39;ctl00$bodyPlaceHolder$listviewCustomers$ctrl0$linkbuttonUpdate&#39;,&#39;&#39;)">Orders</a>
+                            <a id="bodyPlaceHolder_listviewCustomers_linkbuttonEmail_0" class="btn-2" href="javascript:__doPostBack(&#39;ctl00$bodyPlaceHolder$listviewCustomers$ctrl0$linkbuttonEmail&#39;,&#39;&#39;)">Edit</a>
+                        </div>
+                    </div>
+
+                    <div class="data-row odd-row">
+                        <div>
+                            A Corp & R Inc
+                        </div>
+                        <div>
+                            Auburn, PA 17922
+                        </div>
+                        <div>
+                            <a id="bodyPlaceHolder_listviewCustomers_linkbuttonUpdate_1" class="btn-1" href="javascript:__doPostBack(&#39;ctl00$bodyPlaceHolder$listviewCustomers$ctrl1$linkbuttonUpdate&#39;,&#39;&#39;)">Orders</a>
+                            <a id="bodyPlaceHolder_listviewCustomers_linkbuttonEmail_1" class="btn-2" href="javascript:__doPostBack(&#39;ctl00$bodyPlaceHolder$listviewCustomers$ctrl1$linkbuttonEmail&#39;,&#39;&#39;)">Edit</a>
+                        </div>
+                    </div>
+
+                    <div class="data-row even-row">
+                        <div>
+                            A Group X Co Inc
+                        </div>
+                        <div>
+                            Boston, MA 72653
+                        </div>
+                        <div>
+                            <a id="bodyPlaceHolder_listviewCustomers_linkbuttonUpdate_2" class="btn-1" href="javascript:__doPostBack(&#39;ctl00$bodyPlaceHolder$listviewCustomers$ctrl2$linkbuttonUpdate&#39;,&#39;&#39;)">Orders</a>
+                            <a id="bodyPlaceHolder_listviewCustomers_linkbuttonEmail_2" class="btn-2" href="javascript:__doPostBack(&#39;ctl00$bodyPlaceHolder$listviewCustomers$ctrl2$linkbuttonEmail&#39;,&#39;&#39;)">Edit</a>
+                        </div>
+                    </div>
+
+                    <div class="data-row odd-row">
+                        <div>
+                            A Health Systems Global Inc
+                        </div>
+                        <div>
+                            Detroit, MI 48226
+                        </div>
+                        <div>
+                            <a id="bodyPlaceHolder_listviewCustomers_linkbuttonUpdate_3" class="btn-1" href="javascript:__doPostBack(&#39;ctl00$bodyPlaceHolder$listviewCustomers$ctrl3$linkbuttonUpdate&#39;,&#39;&#39;)">Orders</a>
+                            <a id="bodyPlaceHolder_listviewCustomers_linkbuttonEmail_3" class="btn-2" href="javascript:__doPostBack(&#39;ctl00$bodyPlaceHolder$listviewCustomers$ctrl3$linkbuttonEmail&#39;,&#39;&#39;)">Edit</a>
+                        </div>
+                    </div>
+
+                    <div class="data-row even-row">
+                        <div>
+                            A Surgical Casualty Inc Fire
+                        </div>
+                        <div>
+                            South Haven, MI 49090
+                        </div>
+                        <div>
+                            <a id="bodyPlaceHolder_listviewCustomers_linkbuttonUpdate_4" class="btn-1" href="javascript:__doPostBack(&#39;ctl00$bodyPlaceHolder$listviewCustomers$ctrl4$linkbuttonUpdate&#39;,&#39;&#39;)">Orders</a>
+                            <a id="bodyPlaceHolder_listviewCustomers_linkbuttonEmail_4" class="btn-2" href="javascript:__doPostBack(&#39;ctl00$bodyPlaceHolder$listviewCustomers$ctrl4$linkbuttonEmail&#39;,&#39;&#39;)">Edit</a>
+                        </div>
+                    </div>
+
+                    <div class="data-row odd-row">
+                        <div>
+                            A Y Service C Associate
+                        </div>
+                        <div>
+                            York, WY 17403
+                        </div>
+                        <div>
+                            <a id="bodyPlaceHolder_listviewCustomers_linkbuttonUpdate_5" class="btn-1" href="javascript:__doPostBack(&#39;ctl00$bodyPlaceHolder$listviewCustomers$ctrl5$linkbuttonUpdate&#39;,&#39;&#39;)">Orders</a>
+                            <a id="bodyPlaceHolder_listviewCustomers_linkbuttonEmail_5" class="btn-2" href="javascript:__doPostBack(&#39;ctl00$bodyPlaceHolder$listviewCustomers$ctrl5$linkbuttonEmail&#39;,&#39;&#39;)">Edit</a>
+                        </div>
+                    </div>
+
+                    <div class="data-row even-row">
+                        <div>
+                            Abbott & Edwards Products Str
+                        </div>
+                        <div>
+                            Fresno, CA 93778
+                        </div>
+                        <div>
+                            <a id="bodyPlaceHolder_listviewCustomers_linkbuttonUpdate_6" class="btn-1" href="javascript:__doPostBack(&#39;ctl00$bodyPlaceHolder$listviewCustomers$ctrl6$linkbuttonUpdate&#39;,&#39;&#39;)">Orders</a>
+                            <a id="bodyPlaceHolder_listviewCustomers_linkbuttonEmail_6" class="btn-2" href="javascript:__doPostBack(&#39;ctl00$bodyPlaceHolder$listviewCustomers$ctrl6$linkbuttonEmail&#39;,&#39;&#39;)">Edit</a>
+                        </div>
+                    </div>
+
+                    <div class="data-row odd-row">
+                        <div>
+                            Abrasive Wellcome Inc Inc Trucking
+                        </div>
+                        <div>
+                            Monacaort, PA 15061
+                        </div>
+                        <div>
+                            <a id="bodyPlaceHolder_listviewCustomers_linkbuttonUpdate_7" class="btn-1" href="javascript:__doPostBack(&#39;ctl00$bodyPlaceHolder$listviewCustomers$ctrl7$linkbuttonUpdate&#39;,&#39;&#39;)">Orders</a>
+                            <a id="bodyPlaceHolder_listviewCustomers_linkbuttonEmail_7" class="btn-2" href="javascript:__doPostBack(&#39;ctl00$bodyPlaceHolder$listviewCustomers$ctrl7$linkbuttonEmail&#39;,&#39;&#39;)">Edit</a>
+                        </div>
+                    </div>
+
+                    <div class="data-row even-row">
+                        <div>
+                            Acceleration Products Inc Sys 107
+                        </div>
+                        <div>
+                            St Paul, MN 55144
+                        </div>
+                        <div>
+                            <a id="bodyPlaceHolder_listviewCustomers_linkbuttonUpdate_8" class="btn-1" href="javascript:__doPostBack(&#39;ctl00$bodyPlaceHolder$listviewCustomers$ctrl8$linkbuttonUpdate&#39;,&#39;&#39;)">Orders</a>
+                            <a id="bodyPlaceHolder_listviewCustomers_linkbuttonEmail_8" class="btn-2" href="javascript:__doPostBack(&#39;ctl00$bodyPlaceHolder$listviewCustomers$ctrl8$linkbuttonEmail&#39;,&#39;&#39;)">Edit</a>
+                        </div>
+                    </div>
+
+                    <div class="data-row odd-row">
+                        <div>
+                            Accugraph Of Company Inc Co
+                        </div>
+                        <div>
+                            Alameda, NM 94501
+                        </div>
+                        <div>
+                            <a id="bodyPlaceHolder_listviewCustomers_linkbuttonUpdate_9" class="btn-1" href="javascript:__doPostBack(&#39;ctl00$bodyPlaceHolder$listviewCustomers$ctrl9$linkbuttonUpdate&#39;,&#39;&#39;)">Orders</a>
+                            <a id="bodyPlaceHolder_listviewCustomers_linkbuttonEmail_9" class="btn-2" href="javascript:__doPostBack(&#39;ctl00$bodyPlaceHolder$listviewCustomers$ctrl9$linkbuttonEmail&#39;,&#39;&#39;)">Edit</a>
+                        </div>
+                    </div>
+
+                    <div class="data-row even-row">
+                        <div>
+                            Acme Miss Savings Mid-atlantic Associate
+                        </div>
+                        <div>
+                            St Johns Newfoundlnd, CN A1C 5V6
+                        </div>
+                        <div>
+                            <a id="bodyPlaceHolder_listviewCustomers_linkbuttonUpdate_10" class="btn-1" href="javascript:__doPostBack(&#39;ctl00$bodyPlaceHolder$listviewCustomers$ctrl10$linkbuttonUpdate&#39;,&#39;&#39;)">Orders</a>
+                            <a id="bodyPlaceHolder_listviewCustomers_linkbuttonEmail_10" class="btn-2" href="javascript:__doPostBack(&#39;ctl00$bodyPlaceHolder$listviewCustomers$ctrl10$linkbuttonEmail&#39;,&#39;&#39;)">Edit</a>
+                        </div>
+                    </div>
+
+                    <div class="data-row odd-row">
+                        <div>
+                            Adams Info Squibb-nj Edp Resources
+                        </div>
+                        <div>
+                            Florence, AL 35630
+                        </div>
+                        <div>
+                            <a id="bodyPlaceHolder_listviewCustomers_linkbuttonUpdate_11" class="btn-1" href="javascript:__doPostBack(&#39;ctl00$bodyPlaceHolder$listviewCustomers$ctrl11$linkbuttonUpdate&#39;,&#39;&#39;)">Orders</a>
+                            <a id="bodyPlaceHolder_listviewCustomers_linkbuttonEmail_11" class="btn-2" href="javascript:__doPostBack(&#39;ctl00$bodyPlaceHolder$listviewCustomers$ctrl11$linkbuttonEmail&#39;,&#39;&#39;)">Edit</a>
+                        </div>
+                    </div>
+
+
+                </div>
+            </main>
+
+
+            <footer class="text-gray-600 bg-primary-900 flex justify-center align-middle">
+                <span class="p-2">&copy; Copyright 2020 by MegaGiant Corp.</span>
+            </footer>
+        </section>
+
+    </form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="../dist/js/index.js" defer></script>
+
+</body>
+</html>

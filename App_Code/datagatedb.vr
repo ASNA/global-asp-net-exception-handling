@@ -1,0 +1,27 @@
+﻿Using System
+
+BegClass DataGateDB Access(*Public)
+
+    DclDB DGDB 
+
+    BegFunc GetNewConnection Access(*Public) Type(ASNA.VisualRPG.Runtime.Database) 
+        DclSrParm DBName Type(*String) 
+
+        DclFld MsgMask Type(*String) 
+
+        MsgMask = 'Could not connect to {0} database name'
+
+        If *This.DGDB.IsOpen
+            Disconnect *This.DGDB
+        EndIf 
+
+        *This.DGDB.DBName = DBName
+        Try 
+            Connect *This.DGDB 
+            LeaveSr DGDB 
+        Catch Error Type(System.Exception) 
+            Throw *New System.ArgumentException(String.Format(MsgMask, DBName)) 
+        EndTry  
+	EndFunc
+
+EndClass

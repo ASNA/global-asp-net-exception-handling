@@ -1,0 +1,109 @@
+﻿Using System
+Using System.Collections.Specialized    
+Using System.IO 
+
+BegClass Error Partial(*Yes) Access(*Public) Extends(System.Web.UI.Page)
+
+    DclConst CRLF  Value( U'000D000A' )  Access( *Public ) 
+
+    BegSr Page_Load Access(*Private) Event(*This.Load)
+        DclSrParm sender Type(*Object)
+        DclSrParm e Type(System.EventArgs)
+       
+        DclFld Error   Type( System.Exception ) 
+        DclFld ErrorKey Type(*String) 
+//        DclFld Warning Type( WarningError ) 
+        
+        *This.Title = "An error occurred"
+
+        If (NOT Page.IsPostBack)
+            ErrorKey = Request.QueryString['error']
+
+            Error = Application[ErrorKey] *As System.Exception 
+
+            If Error <> *Nothing  
+                // Show error details.
+                literalErrorDetail.Text = GetErrorDetails(Error, CRLF)             
+            EndIf             
+        EndIf
+    EndSr
+
+   BegFunc GetErrorDetails Type( *String )  Access( *Public ) 
+        //
+        // Get all error message and stack trace info for a given error.
+        //
+        DclSrParm Error    Type( System.Exception ) 
+        DclSrParm NewLine  Type( *String  ) 
+        
+        // NewLine provides the way new lines should be formed. When the
+        // text is used inside a multi-line textbox, a CRLF should be used 
+        // as a newline. When the text is sent as a formatted email (as 
+        // an HTML document) the <br> tag should be used.
+
+        DclFld ErrorDetails Type( System.Text.StringBuilder ) New( 512 ) 
+        DclFld NestedDetails Type(StringCollection) New()
+        DclFld Counter Type(*Integer4) 
+        
+        DclFld Level        Type( *Integer4 ) 
+        DclFld Now          Type( DateTime ) 
+        DclFld MsgMask Type(*String) 
+        DclFld Index Type(*Integer4) 
+
+        MsgMask = 'This error occured on {0} at {1}M{2}' 
+                
+        Now = DateTime.Now 
+        labelErrorHeading.Text = String.Format(MsgMask, Now.ToString( "dddd, MMMM dd, yyyy" ), Now.ToString( "hh:mm:ss t" ), NewLine + NewLine)
+
+        CollectNestedErrorDetail(Error, NestedDetails, Level, NewLine )         
+
+        Error = Error.InnerException
+        DoWhile ( Error <> *Nothing ) 
+            Level = Level + 1
+            CollectNestedErrorDetail(Error, NestedDetails, Level, NewLine ) 
+            Error = Error.InnerException
+        EndDo 
+       
+        For Index(Counter = NestedDetails.Count -1) DownTo(0) 
+            ErrorDetails.Append(NestedDetails[Counter])
+            If Counter <> 0 
+                ErrorDetails.Append(*New System.String('-' *As *OneChar, 150) + NewLine)
+            EndIf 
+        EndFor 
+
+        LogError(ErrorDetails.ToString())
+
+        LeaveSr ErrorDetails.ToString() 
+    EndFunc 
+    
+    BegSr CollectNestedErrorDetail
+        DclSrParm Error         Type( System.Exception ) 
+        DclSrParm NestedDetails Type(StringCollection) 
+        DclSrParm Level         Type( *Integer4 )
+        DclSrParm NewLine       Type( *String  ) 
+        
+        DclFld ErrorDetails  Type( System.Text.StringBuilder ) New()
+
+        ErrorDetails.Append( "Error level " + Level.ToString() + NewLine )              
+        ErrorDetails.Append( "Error message: " )
+        ErrorDetails.Append( Error.Message + NewLine + NewLine ) 
+        ErrorDetails.Append( "Stack trace:" + NewLine ) 
+        ErrorDetails.Append( Error.StackTrace + NewLine + NewLine + NewLine + NewLine ) 
+
+        NestedDetails.Add(ErrorDetails.ToString()) 
+    EndSr
+
+    BegSr LogError
+        DclSrParm ErrorDetails Type(*String) 
+
+        DclFld ErrorsFolderPath Type(*String) 
+        DclFld Filename Type(*String) 
+        DclFld FullFilename Type(*String) 
+
+        ErrorsFolderPath  = Server.MapPath('/errors') 
+        FileName = DateTime.Now.ToString('yyyy-MM-dd-HH-mm-ss')
+        FullFilename = String.Format('{0}\{1}.log', ErrorsFolderPath, Filename)
+        
+        File.WriteAllText(FullFilename, ErrorDetails)   
+    EndSr 
+
+EndClass
