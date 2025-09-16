@@ -373,3 +373,34 @@ EndClass
 
 The code above uses the `System.IO.File` object to log each error to its own text file in the `errors` folder in the root of the project. This is minimal error logging. Search [nuget.org](nuget.org) for "logging" to see more enterprisey logging solutions. That said,  if the error handling logic is too complex, you'll specially error handling for the error logger so this some merit in a minimal logging scheme.
 
+This error handling reports the top-level exception and all its nested exceptions (if present). An example logged error (show nesting one level deep) is shown below:
+
+```
+Error level 1
+Error message: This is a test error
+
+Stack trace:
+   at views_orders_by_name.Button1_Click(Object sender, EventArgs e) in C:\Users\thumb\Documents\projects\customers\global-asp-net-exception-handling\views\orders-by-name.aspx.vr:line 121
+   at System.Web.UI.WebControls.Button.OnClick(EventArgs e)
+   at System.Web.UI.WebControls.Button.RaisePostBackEvent(String eventArgument)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------
+Error level 0
+Error message: Exception of type 'System.Web.HttpUnhandledException' was thrown.
+
+Stack trace:
+   at System.Web.UI.Page.HandleError(Exception e)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest()
+   at System.Web.UI.Page.ProcessRequest(HttpContext context)
+   at ASP.views_orders_by_name_aspx.ProcessRequest(HttpContext context) in C:\Users\thumb\AppData\Local\Temp\Temporary ASP.NET Files\vs\3d1197a2\2c97e2c1\App_Web_bszd0aen.0.vr:line 829
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+```
+
