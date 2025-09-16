@@ -112,4 +112,13 @@ BegClass views_orders_by_name Partial(*Yes) Access(*Public) Extends(System.Web.U
         custList.Close() 
     EndSr 
 
+	BegSr Button1_Click Access(*Private) Event(*This.Button1.Click)
+		DclSrParm sender Type(*Object)
+		DclSrParm e Type(System.EventArgs)
+
+        // Cause error
+
+        Throw *New Exception("This is a test error") 
+		
+	EndSr
 EndClass

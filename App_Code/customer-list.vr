@@ -18,7 +18,7 @@ DclNamespace asna.entities
 
 BegClass customerList Access(*Public)
 
-    DclDB DGDB DBName( "*Public/DG NET Local" ) 
+    DclDB DGDB DBName( "*Public/dg-local-db" ) 
                 
     DclDiskFile Customer +
             Type(*Input) + 

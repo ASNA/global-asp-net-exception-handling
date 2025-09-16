@@ -1,7 +1,6 @@
 ﻿<%@ Page Language="AVR" MasterPageFile="~/MasterPage.master" AutoEventWireup="false" ValidateRequest="false"
     CodeFile="orders-by-name.aspx.vr" Inherits="views_orders_by_name" Title="Untitled Page" %>
 
-<%@ Register Src="~/user-controls/orders-pages-nav.ascx" TagPrefix="uc1" TagName="orderspagesnav" %>
 
 <%@ Import Namespace="asna.entities" %>
 
@@ -9,7 +8,22 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="navPlaceholder" runat="Server">
-    <uc1:orderspagesnav runat="server" ID="orderspagesnav" />
+    <nav class="bg-gray-500">
+        <div id="sub-nav" class="flex flex-col items-start pt-4 pl-4 text-gray-700">
+            <div class="pb-1 pr-4">
+                <span class="text-xl text-gray-800 pb-2">Show customers by</span>
+            </div>
+            <a href="./orders-by-name.aspx" data-action="page-action" id="orders-by-name" class=""><span class="pl-3 text-lg">Name</span></a>
+            <a href="./orders-by-address.aspx" data-action="page-action" id="orders-by-address" class=""><span class="pl-3 text-lg">Address</span></a>
+            <a href="#" data-action="page-action" id="orders-by-sales" class=""><span class="pl-3 text-lg">Sales</span></a>
+            <div class="pb-1 pr-4 pt-2">
+                <span class="text-xl text-gray-800 pt-4 pb-2">Show orders by</span>
+            </div>
+            <a href="#" data-action="page-action" id="back-orders-by-name" class=""><span class="pl-3 text-lg">Name</span></a>
+            <a href="#" data-action="page-action" id="back-orders-by-sales" class=""><span class="pl-3 text-lg">Sales</span></a>
+        </div>
+    </nav>            
+
 </asp:Content>
 
 <asp:Content ID="Content3" ContentPlaceHolderID="bodyPlaceHolder" runat="Server">
@@ -49,7 +63,8 @@
             </button>
 
             <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
-            <button id="submitform">click me</button>
+
+            <asp:Button ID="Button1" class="bg-red-700 hover:bg-red-800 text-gray-200 font-bold py-2 ml-4 px-4 rounded inline-flex items-center" runat="server" Text="Cause Error" />
         </div>
 
 

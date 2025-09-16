@@ -12,8 +12,7 @@ BegClass Error Partial(*Yes) Access(*Public) Extends(System.Web.UI.Page)
        
         DclFld Error   Type( System.Exception ) 
         DclFld ErrorKey Type(*String) 
-//        DclFld Warning Type( WarningError ) 
-        
+       
         *This.Title = "An error occurred"
 
         If (NOT Page.IsPostBack)

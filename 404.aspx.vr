@@ -9,7 +9,7 @@ Using System.Web.UI.WebControls
 Using System.Web.UI.WebControls.WebParts
 Using System.Web.UI.HtmlControls
 
-BegClass views_orders_by_address Partial(*Yes) Access(*Public) Extends(System.Web.UI.Page)
+BegClass _404 Partial(*Yes) Access(*Public) Extends(System.Web.UI.Page)
 
     BegSr Page_Load Access(*Private) Event(*This.Load)
         DclSrParm sender Type(*Object)
